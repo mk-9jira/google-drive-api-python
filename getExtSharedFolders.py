@@ -74,7 +74,7 @@ def getAllPermissionsInItem(service, folderId, pageToken=None, permissions=[]):
     return getAllPermissionsInItem(service, folderId, results['nextPageToken'], permissions)
 
 
-# If the file is shared a user not having "@caddi~" domain, it is determined an external shared item
+# If the file is shared a user not having "@your_domain" domain, it is determined an external shared item
 def checkExtSharedFolders(service, folderId):
   isShared = False
   permissions = getAllPermissionsInItem(service, folderId)
@@ -86,7 +86,7 @@ def checkExtSharedFolders(service, folderId):
     # pType = permission['type']
     # pRole = permission['role']
     # print(f"{displayName} / {email} ({pType}, {pRole})")
-    if not "@caddi" in email:
+    if not "@your_domain" in email:
       isShared = True
       break
   return [isShared, email]
