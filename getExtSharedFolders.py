@@ -126,7 +126,7 @@ def main():
       driveId = drive['id']
       driveName = drive['name']
       # [Test]
-      if driveId != "0AHWpboBfWVBLUk9PVA":    # cp-honbu
+      if driveId != "drive_id_for_test":
         continue
       # [/Test]
       print(f"Drive: {driveName} ({driveId})")
